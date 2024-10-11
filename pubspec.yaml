@@ -1,0 +1,80 @@
+name: createaccount
+description: "Create Cubebased Account"
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: 3.5.3
+  flutter: 3.24.1
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  lottie: ^3.0.0
+  provider: ^6.1.1
+  http: ^1.0.0
+  qr_flutter: ^4.1.0
+  base_x: ^2.0.1
+  flutter_launcher_icons: ^0.14.1
+  
+  slider_captcha:
+    git:
+      url: https://github.com/cubebased/slider_captcha.git
+      ref: 07d2ff6ae0009219fa0c71a45d130fec7a6d70d9
+
+  eosdart:
+    git:
+      url: https://github.com/cubebased/eosdart.git
+      ref: master
+  
+  eosdart_ecc: ^0.4.4
+  auto_size_text: ^3.0.0
+  url_launcher: ^6.0.12
+
+  ##Print Certificate
+  pdf: ^3.10.8
+  printing: ^5.12.0
+  
+  ##Internationalization
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+flutter:
+  generate: true
+  uses-material-design: true
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Bold.ttf
+  assets:
+    - assets/
+    - assets/fonts/
+    - assets/fr0g/
+    - assets/images/
+    - assets/lottie/
+
+flutter_icons:
+  #After changes in flutter_icons, generate icons with: flutter pub run flutter_launcher_icons
+  image_path: "assets/ic_launcher.png"
+  remove_alpha_ios: true
+  windows:
+    generate: true
+    image_path: "assets/ic_launcher.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  web:
+    generate: true
+    image_path: "assets/ic_launcher.png"
+  macos:
+    generate: true
+    image_path: "assets/ic_launcher.png"
+  ios:
+    generate: true
+    image_path: "assets/ic_launcher.png"
