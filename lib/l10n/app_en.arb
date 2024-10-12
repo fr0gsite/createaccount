@@ -40,5 +40,9 @@
     "ownerpermissionexplain":"Can overwrite ACTIVE. In case of hack or lost of ACTIVE permission",
     "retryagain":"Retry again",
     "connectionproblem": "Uff, Connection Problem",
-    "accountsthatcanbegeneratedtoday": "Accounts that can be generated today"
+    "accountsthatcanbegeneratedtoday": "Accounts that can be generated today",
+    "disclaimer01": "This platform is currently still in the beta phase. Errors may occur, or accounts on this platform may change or be deleted without notice.",
+    "accountsponsored": "Account sponsored by the community",
+    "noacountavailable": "Unfortunately, no account can be generated."
+
 }

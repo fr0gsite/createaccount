@@ -37,5 +37,8 @@
     "ownerpermissionexplain":"Kann ACTIVE überschreiben. Im Falle eines Hacks oder des Verlusts von ACTIVE",
     "retryagain":"Erneut versuchen",
     "connectionproblem": "Uff, Verbindungsproblem",
-    "accountsthatcanbegeneratedtoday": "Accounts die heute erzeugt werden können"
+    "accountsthatcanbegeneratedtoday": "Accounts die heute erzeugt werden können",
+    "disclaimer01":"Diese Plattform ist aktuell noch in der Beta Phase. Es können also Fehler auftreten oder Accounts dieser Plattform können sich ohne Vorankündigung verändern oder gelöscht werden.",
+    "accountsponsored":"Account gesponsort von der Community",
+    "noacountavailable":"Leider kann kein Account erzeugt werden."
 }   

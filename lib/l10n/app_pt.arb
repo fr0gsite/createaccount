@@ -38,6 +38,10 @@
 "ownerpermissionexplain": "Może nadpisać ACTIVE. W przypadku hakowania lub utraty ACTIVE",
 "retryagain": "Tentar novamente",
 "connectionproblem": "Uff, Problema de conexão",
-"accountsthatcanbegeneratedtoday": "Contas que podem ser geradas hoje"
+"accountsthatcanbegeneratedtoday": "Contas que podem ser geradas hoje",
+"disclaimer01": "Esta plataforma ainda está na fase beta. Podem ocorrer erros ou contas nesta plataforma podem ser alteradas ou excluídas sem aviso prévio.",
+"accountsponsored": "Conta patrocinada pela comunidade",
+"noacountavailable": "Infelizmente, não é possível gerar nenhuma conta."
+
 
 }

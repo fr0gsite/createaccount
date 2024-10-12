@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:math';
+
 import 'package:createaccount/config.dart';
 import 'package:createaccount/datatypes/globalstatus.dart';
 import 'package:createaccount/l10n/l10n.dart';
@@ -61,10 +64,33 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
   late AnimationController backgroundcontroller;
+  late Timer changeimagetimer;
+  late String currentbackgroundimage;
+
+  List<String> imagesrc = [
+    "assets/fr0g/2.json",
+    "assets/fr0g/6.json",
+    "assets/fr0g/8.json",
+    "assets/fr0g/11.json",
+    "assets/fr0g/20.json",
+    "assets/fr0g/22.json",
+    "assets/fr0g/25.json",
+    "assets/fr0g/28.json",
+    "assets/fr0g/29.json",
+    "assets/fr0g/32.json",
+    "assets/fr0g/44.json",
+  ];
 
   @override
   void initState() {
     super.initState();
+    currentbackgroundimage = imagesrc[4];
+    changeimagetimer = Timer.periodic(const Duration(seconds: 5), (timer) {
+      setState(() {
+        currentbackgroundimage = imagesrc[Random().nextInt(imagesrc.length)];
+      });
+    });
+
     backgroundcontroller = AnimationController(vsync: this);
     backgroundcontroller.duration = const Duration(seconds: 20);
     backgroundcontroller.repeat(reverse: true);
@@ -93,10 +119,8 @@ class _MyHomePageState extends State<MyHomePage>
                 alignment: WrapAlignment.center,
                 crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
-                  Image(
-                    image: AssetImage(
-                      "assets/ic_launcher.png",
-                    ),
+                  Lottie.asset(
+                    currentbackgroundimage,
                     height: MediaQuery.of(context).size.height * 0.5,
                     width: MediaQuery.of(context).size.width * 0.5,
                   ),

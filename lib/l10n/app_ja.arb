@@ -37,6 +37,10 @@
 "ownerpermissionexplain": "ACTIVEの上書きが可能。ハッキングやACTIVEの紛失の場合",
 "retryagain": "再試行してください",
 "connectionproblem": "うわっ、接続の問題",
-"accountsthatcanbegeneratedtoday": "今日生成できるアカウント"
+"accountsthatcanbegeneratedtoday": "今日生成できるアカウント",
+"disclaimer01": "このプラットフォームは現在まだベータ版です。エラーが発生する可能性があり、このプラットフォームのアカウントは予告なく変更または削除されることがあります。",
+"accountsponsored": "コミュニティによってスポンサーされたアカウント",
+"noacountavailable": "残念ながら、アカウントを作成できません。"
+
 
 }

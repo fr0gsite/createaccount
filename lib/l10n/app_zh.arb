@@ -38,6 +38,10 @@
 "ownerpermissionexplain": "可以覆盖 ACTIVE。在被黑客攻击或 ACTIVE 丢失的情况下",
 "retryagain": "重试",
 "connectionproblem": "哎呀，连接问题",
-"accountsthatcanbegeneratedtoday": "今天可以生成的账户"
+"accountsthatcanbegeneratedtoday": "今天可以生成的账户",
+"disclaimer01": "该平台目前仍处于测试阶段。可能会出现错误，平台上的帐户可能会更改或在没有通知的情况下被删除。",
+"accountsponsored": "由社区赞助的帐户",
+"noacountavailable": "很遗憾，无法生成帐户。"
+
 
 }

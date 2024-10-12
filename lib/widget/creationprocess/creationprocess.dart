@@ -4,6 +4,8 @@ import 'package:createaccount/networkaction.dart';
 import 'package:createaccount/widget/creationprocess/step1.dart';
 import 'package:createaccount/widget/creationprocess/step2.dart';
 import 'package:createaccount/widget/creationprocess/step3.dart';
+import 'package:createaccount/widget/disclaimer.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
@@ -53,12 +55,10 @@ class _CreationProcessState extends State<CreationProcess> {
                     spacing: 20,
                     runSpacing: 20,
                     children: [
-                      Text(AppLocalizations.of(context)!.createaccount,
-                          style: AppConfig.titlestyle),
                       globalstatus.availableaccounts >= 0 &&
                               globalstatus.currentStep == 1
                           ? Text(
-                              "${AppLocalizations.of(context)!.accountsthatcanbegeneratedtoday} ${globalstatus.availableaccounts}",
+                              "${AppLocalizations.of(context)!.accountsthatcanbegeneratedtoday}: ${globalstatus.availableaccounts}",
                               style:
                                   TextStyle(color: Colors.white, fontSize: 20))
                           : Container(),
@@ -77,7 +77,9 @@ class _CreationProcessState extends State<CreationProcess> {
                       )),
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
-                    child: steps[globalstatus.currentStep - 1],
+                    child: !globalstatus.acceptdisclaimer
+                        ? Disclaimer()
+                        : steps[globalstatus.currentStep - 1],
                   ),
                 ),
               ],

@@ -35,5 +35,13 @@
 "clicktocopy": "Kliknutím zkopírovat",
 "activepermissionexplain": "Pro každodenní používání",
 "tologin": "Pro přihlášení",
-"ownerpermissionexplain": "Může přepsat ACTIVE. V případě hacknutí nebo ztráty ACTIVE"
+"ownerpermissionexplain": "Může přepsat ACTIVE. V případě hacknutí nebo ztráty ACTIVE",
+"retryagain": "Zkuste to znovu",
+"connectionproblem": "Uf, problém s připojením",
+"accountsthatcanbegeneratedtoday": "Účty, které lze dnes vytvořit",
+"disclaimer01": "Tato platforma je stále ve fázi beta. Mohou se vyskytnout chyby, nebo mohou být účty na této platformě změněny či smazány bez upozornění.",
+"accountsponsored": "Účet sponzorovaný komunitou",
+"noacountavailable": "Bohužel není možné vytvořit účet."
+
+
 }

@@ -135,6 +135,7 @@ class NetworkAction {
         final data = json.decode(response.body);
 
         int remainingAccounts = data['remainingAccounts'];
+        //return 0;
         return remainingAccounts;
       } else {
         // Fehler: Server hat einen anderen Statuscode zurückgegeben

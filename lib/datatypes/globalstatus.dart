@@ -10,6 +10,7 @@ class GlobalStatus extends ChangeNotifier {
   int currentStep = 1;
   CaptchaResponse? captcharesponse;
   int availableaccounts = -1;
+  bool acceptdisclaimer = false;
 
   String choosenusername = "";
   bool isusernamevalid = false;
@@ -40,6 +41,11 @@ class GlobalStatus extends ChangeNotifier {
 
   void setAvailableAccounts(int value) {
     availableaccounts = value;
+    notifyListeners();
+  }
+
+  void setAcceptDisclaimer(bool value) {
+    acceptdisclaimer = value;
     notifyListeners();
   }
 

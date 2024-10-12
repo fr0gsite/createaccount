@@ -38,6 +38,8 @@
 "ownerpermissionexplain": "قد يتجاوز ACTIVE. في حالة الاختراق أو فقدان ACTIVE",
 "retryagain": "أعد المحاولة",
 "connectionproblem": "أوف، مشكلة اتصال",
-"accountsthatcanbegeneratedtoday": "الحسابات التي يمكن إنشاؤها اليوم"
-
+"accountsthatcanbegeneratedtoday": "الحسابات التي يمكن إنشاؤها اليوم",
+"disclaimer01": "هذه المنصة لا تزال في المرحلة التجريبية. قد تحدث أخطاء أو قد يتم تغيير أو حذف الحسابات على هذه المنصة دون سابق إنذار.",
+"accountsponsored": "الحساب برعاية المجتمع",
+"noacountavailable": "للأسف، لا يمكن إنشاء حساب."
 }
