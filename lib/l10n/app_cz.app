@@ -42,6 +42,4 @@
 "disclaimer01": "Tato platforma je stále ve fázi beta. Mohou se vyskytnout chyby, nebo mohou být účty na této platformě změněny či smazány bez upozornění.",
 "accountsponsored": "Účet sponzorovaný komunitou",
 "noacountavailable": "Bohužel není možné vytvořit účet."
-
-
 }
