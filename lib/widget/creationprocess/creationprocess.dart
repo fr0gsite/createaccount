@@ -5,7 +5,6 @@ import 'package:createaccount/widget/creationprocess/step1.dart';
 import 'package:createaccount/widget/creationprocess/step2.dart';
 import 'package:createaccount/widget/creationprocess/step3.dart';
 import 'package:createaccount/widget/disclaimer.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';

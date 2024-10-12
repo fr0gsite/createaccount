@@ -343,7 +343,7 @@ class _Step3State extends State<Step3> {
                 ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.blue),
+                        WidgetStateProperty.all<Color>(Colors.blue),
                   ),
                   onPressed: () {
                     launchUrl(Uri.parse(AppConfig.websiteurl));
