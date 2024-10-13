@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:base_x/base_x.dart';
 import 'package:createaccount/config.dart';
 import 'package:createaccount/datatypes/globalstatus.dart';

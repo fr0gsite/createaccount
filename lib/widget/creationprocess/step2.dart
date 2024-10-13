@@ -83,18 +83,21 @@ class _Step2State extends State<Step2> {
                   filled: true),
             ),
           ),
+          const SizedBox(
+            height: 16,
+          ),
           Wrap(
             spacing: 20,
             direction: Axis.horizontal,
             children: [
+              Icon(
+                isusernamevalid ? Icons.check : Icons.close,
+                color: isusernamevalid ? Colors.green : Colors.red,
+              ),
               Text(
                 AppLocalizations.of(context)!.usernamevalid,
                 style: TextStyle(
                     color: isusernamevalid ? Colors.green : Colors.red),
-              ),
-              Icon(
-                isusernamevalid ? Icons.check : Icons.close,
-                color: isusernamevalid ? Colors.green : Colors.red,
               ),
             ],
           ),

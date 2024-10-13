@@ -133,6 +133,7 @@ class _MyHomePageState extends State<MyHomePage>
         ],
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         onPressed: () {
           showDialog(context: context, builder: (_) => const SetLanguageView());
         },

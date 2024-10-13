@@ -3,7 +3,6 @@ import 'package:createaccount/config.dart';
 import 'package:createaccount/datatypes/globalstatus.dart';
 import 'package:createaccount/l10n/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 class SetLanguageView extends StatelessWidget {
