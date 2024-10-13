@@ -1,5 +1,6 @@
 {
     "language": "English",
+    "countrycode":"US",
     "thelanguage":"Language",
     "@language":{
         "description": "The current language"

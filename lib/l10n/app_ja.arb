@@ -1,5 +1,6 @@
 {
 "language": "日本語",
+"countrycode": "JP",
 "thelanguage": "言語",
 "createaccount": "アカウントを作成",
 "usernamemustmatchformat": "ユーザー名はこの形式と一致する必要があります",

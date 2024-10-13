@@ -57,12 +57,14 @@ class _Step3State extends State<Step3> {
               crossAxisAlignment: WrapCrossAlignment.start,
               direction: Axis.vertical,
               children: [
-                AutoSizeText(
+                Text(
                   AppLocalizations.of(context)!.pleasesavethiscredentials,
                   style: const TextStyle(
-                      color: Colors.red,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
                 Row(
                   children: [

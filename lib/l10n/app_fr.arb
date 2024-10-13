@@ -1,6 +1,7 @@
 
 {
 "language": "Français",
+"countrycode": "FR",
 "thelanguage": "Langue",
 "createaccount": "Créer un compte",
 "usernamemustmatchformat": "Le nom d'utilisateur doit correspondre à ce format",

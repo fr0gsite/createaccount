@@ -1,5 +1,6 @@
 {
     "language": "Deutsch",
+    "countrycode":"DE",
     "thelanguage":"Sprache",
     "createaccount":"Konto erstellen",
     "usernamemustmatchformat":"Benutzername muss diesem Format entsprechen",

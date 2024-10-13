@@ -1,6 +1,7 @@
 
 {
 "language": "中文",
+"countrycode": "CN",
 "thelanguage": "语言",
 "createaccount": "创建账户",
 "usernamemustmatchformat": "用户名必须符合此格式",

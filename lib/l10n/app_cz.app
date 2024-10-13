@@ -1,6 +1,7 @@
 
 {
 "language": "Čeština",
+"countrycode":"CZ",
 "thelanguage": "Jazyk",
 "createaccount": "Vytvořit účet",
 "usernamemustmatchformat": "Uživatelské jméno musí odpovídat tomuto formátu",

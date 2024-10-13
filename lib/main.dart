@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:country_flags/country_flags.dart';
 import 'package:createaccount/config.dart';
 import 'package:createaccount/datatypes/globalstatus.dart';
 import 'package:createaccount/l10n/l10n.dart';
 import 'package:createaccount/widget/creationprocess/creationprocess.dart';
+import 'package:createaccount/widget/setlanguageview.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
@@ -42,6 +44,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       supportedLocales: L10n.all,
+      locale: Provider.of<GlobalStatus>(context).currentlanguage,
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
@@ -114,21 +117,13 @@ class _MyHomePageState extends State<MyHomePage>
                 CurvedAnimation(
                     parent: backgroundcontroller, curve: Curves.easeInOut),
               ),
-              child: Wrap(
-                direction: Axis.vertical,
-                alignment: WrapAlignment.center,
-                crossAxisAlignment: WrapCrossAlignment.center,
+              child: Stack(
                 children: [
                   Lottie.asset(
                     currentbackgroundimage,
                     height: MediaQuery.of(context).size.height * 0.5,
                     width: MediaQuery.of(context).size.width * 0.5,
                   ),
-                  Text("Fr0g.site",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: MediaQuery.of(context).size.height * 0.1,
-                      )),
                 ],
               )),
           Container(
@@ -136,6 +131,21 @@ class _MyHomePageState extends State<MyHomePage>
           ),
           const CreationProcess(),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showDialog(context: context, builder: (_) => const SetLanguageView());
+        },
+        child: Wrap(
+          children: [
+            const Icon(Icons.translate, size: 25),
+            CountryFlag.fromCountryCode(
+              AppLocalizations.of(context)!.countrycode,
+              width: 25,
+              height: 25,
+            ),
+          ],
+        ),
       ),
     );
   }

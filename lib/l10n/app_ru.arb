@@ -1,6 +1,7 @@
 
 {
 "language": "Русский",
+"countrycode": "RU",
 "thelanguage": "Язык",
 "createaccount": "Создать учетную запись",
 "usernamemustmatchformat": "Имя пользователя должно соответствовать этому формату",

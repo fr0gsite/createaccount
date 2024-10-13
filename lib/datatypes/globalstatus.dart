@@ -5,6 +5,7 @@ import 'package:createaccount/tools.dart';
 import 'package:flutter/material.dart';
 
 class GlobalStatus extends ChangeNotifier {
+  Locale? currentlanguage;
   bool requestcaptchtimeout = false;
   bool _isCaptchaVerified = false;
   int currentStep = 1;
@@ -55,6 +56,11 @@ class GlobalStatus extends ChangeNotifier {
 
   void setRequestcaptchtimeout(bool value) {
     requestcaptchtimeout = value;
+    notifyListeners();
+  }
+
+  void setLanguage(Locale value) {
+    currentlanguage = value;
     notifyListeners();
   }
 

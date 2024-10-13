@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 class L10n {
   static final all = [
-    const Locale('en'),
-    const Locale('de'),
-    const Locale('es'),
-    const Locale('fr'),
-    const Locale('zh'),
-    const Locale('pt'),
-    const Locale('ar'),
-    const Locale('ja'),
-    const Locale('ru'),
-    const Locale('uk'),
-    const Locale('it'),
-    const Locale('cz'),
+    const Locale('en', 'US'),
+    const Locale('de', 'DE'),
+    const Locale('es', 'ES'),
+    const Locale('fr', 'FR'),
+    const Locale('zh', 'CN'),
+    const Locale('pt', 'PT'),
+    const Locale('ar', 'AE'),
+    const Locale('ja', 'JP'),
+    const Locale('ru', 'RU'),
+    const Locale('uk', 'UA'),
+    const Locale('it', 'IT'),
+    const Locale('cz', 'CZ'),
   ];
 }

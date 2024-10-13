@@ -22,4 +22,27 @@ class AppConfig {
     color: Colors.white,
     fontSize: 16,
   );
+
+  static List<AppLanguage> applanguage = [
+    AppLanguage("international/none", "none"),
+    AppLanguage("German", "de"),
+    AppLanguage("English", "en"),
+    AppLanguage("Français", "fr"),
+    AppLanguage("Español", "es"),
+    AppLanguage("Português", "pt"),
+    AppLanguage("Русский", "ru"),
+    AppLanguage("Українська", "uk"),
+    AppLanguage("中文", "zh"),
+    AppLanguage("日本語", "ja"),
+    AppLanguage("اللغة العربية", "ar"),
+    AppLanguage("Italiano", "it"),
+    AppLanguage("Čeština", "cz"),
+  ];
+}
+
+class AppLanguage {
+  final String languagename;
+  final String countrycode;
+
+  AppLanguage(this.languagename, this.countrycode);
 }

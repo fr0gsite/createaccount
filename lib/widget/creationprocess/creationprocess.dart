@@ -47,22 +47,17 @@ class _CreationProcessState extends State<CreationProcess> {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: Wrap(
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    alignment: WrapAlignment.center,
-                    direction: Axis.vertical,
-                    spacing: 20,
-                    runSpacing: 20,
-                    children: [
-                      globalstatus.availableaccounts >= 0 &&
-                              globalstatus.currentStep == 1
-                          ? Text(
-                              "${AppLocalizations.of(context)!.accountsthatcanbegeneratedtoday}: ${globalstatus.availableaccounts}",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20))
-                          : Container(),
-                    ],
-                  ),
+                  child: globalstatus.availableaccounts >= 0 &&
+                          globalstatus.currentStep == 1
+                      ? Text(
+                          "${globalstatus.availableaccounts} ${AppLocalizations.of(context)!.accountsthatcanbegeneratedtoday}",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                          textAlign: TextAlign.center,
+                        )
+                      : Container(),
                 ),
                 Container(
                   decoration: BoxDecoration(

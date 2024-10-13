@@ -18,6 +18,8 @@ class _Step2State extends State<Step2> {
   TextEditingController usernamecontroller = TextEditingController();
   bool isusernamevalid = false;
   bool isusernameavaribale = false;
+  bool isNextButtonEnabled = false;
+  bool loading = false;
 
   @override
   void initState() {
@@ -40,149 +42,160 @@ class _Step2State extends State<Step2> {
           const SizedBox(
             height: 20,
           ),
-          Wrap(
-            spacing: 20,
-            crossAxisAlignment: WrapCrossAlignment.start,
-            direction: Axis.vertical,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Wrap(
-                direction: Axis.vertical,
-                spacing: 2,
-                crossAxisAlignment: WrapCrossAlignment.start,
-                children: [
-                  AutoSizeText(
-                    "${AppLocalizations.of(context)!.usernamemustmatchformat} :",
-                    style: const TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                  AutoSizeText(
-                    "- ${AppLocalizations.of(context)!.usernamerule1}",
-                    style: const TextStyle(
-                        color: Colors.red,
-                        fontSize: 17,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  AutoSizeText(
-                    "- ${AppLocalizations.of(context)!.usernamerule2}",
-                    style: const TextStyle(
-                        color: Colors.red,
-                        fontSize: 17,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ],
+              Text(
+                "${AppLocalizations.of(context)!.usernamemustmatchformat}:",
+                style: const TextStyle(color: Colors.white, fontSize: 20),
               ),
-              SizedBox(
-                width: 300,
-                child: TextField(
-                  controller: usernamecontroller,
-                  style: const TextStyle(color: Colors.white),
-                  autofillHints: const [AutofillHints.password],
-                  decoration: InputDecoration(
-                      labelText: AppLocalizations.of(context)!.username,
-                      labelStyle: const TextStyle(color: Colors.white),
-                      focusedBorder: const OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.white, width: 3)),
-                      fillColor: Colors.blueGrey,
-                      filled: true),
-                ),
+              Text(
+                "- ${AppLocalizations.of(context)!.usernamerule1}",
+                style: const TextStyle(
+                    color: Colors.red,
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold),
               ),
-              Wrap(
-                spacing: 20,
-                direction: Axis.horizontal,
-                children: [
-                  Text(
-                    AppLocalizations.of(context)!.usernamevalid,
-                    style: TextStyle(
-                        color: isusernamevalid ? Colors.green : Colors.red),
-                  ),
-                  Icon(
-                    isusernamevalid ? Icons.check : Icons.close,
-                    color: isusernamevalid ? Colors.green : Colors.red,
-                  ),
-                ],
+              Text(
+                "- ${AppLocalizations.of(context)!.usernamerule2}",
+                style: const TextStyle(
+                    color: Colors.red,
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold),
               ),
             ],
           ),
           const SizedBox(
             height: 20,
           ),
+          SizedBox(
+            width: 300,
+            child: TextField(
+              controller: usernamecontroller,
+              style: const TextStyle(color: Colors.white),
+              autofillHints: const [AutofillHints.password],
+              decoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.username,
+                  labelStyle: const TextStyle(color: Colors.white),
+                  focusedBorder: const OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white, width: 3)),
+                  fillColor: Colors.blueGrey,
+                  filled: true),
+            ),
+          ),
+          Wrap(
+            spacing: 20,
+            direction: Axis.horizontal,
+            children: [
+              Text(
+                AppLocalizations.of(context)!.usernamevalid,
+                style: TextStyle(
+                    color: isusernamevalid ? Colors.green : Colors.red),
+              ),
+              Icon(
+                isusernamevalid ? Icons.check : Icons.close,
+                color: isusernamevalid ? Colors.green : Colors.red,
+              ),
+            ],
+          ),
           const SizedBox(
             height: 20,
           ),
           ElevatedButton(
-            onPressed: () async {
-              bool validusername =
-                  Tools().isusernamevalid(usernamecontroller.text);
-              if (!validusername) {
-                if (mounted) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      backgroundColor: Colors.black,
-                      content: AutoSizeText(
-                        AppLocalizations.of(context)!.usernameinvalid,
-                        style:
-                            const TextStyle(fontSize: 20, color: Colors.white),
-                      ),
-                    ),
-                  );
-                }
-                return;
-              }
-              //Check if username is unique
-              bool uniqueusername = await NetworkAction()
-                  .isusernameunique(usernamecontroller.text);
-              if (!uniqueusername) {
-                if (context.mounted) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      backgroundColor: Colors.black,
-                      content: AutoSizeText(
-                        AppLocalizations.of(context)!.usernameunavailable,
-                        style:
-                            const TextStyle(fontSize: 20, color: Colors.white),
-                      ),
-                    ),
-                  );
-                }
+            onPressed: isusernamevalid && !loading
+                ? () async {
+                    bool validusername =
+                        Tools().isusernamevalid(usernamecontroller.text);
+                    if (!validusername) {
+                      if (mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            backgroundColor: Colors.black,
+                            content: AutoSizeText(
+                              AppLocalizations.of(context)!.usernameinvalid,
+                              style: const TextStyle(
+                                  fontSize: 20, color: Colors.white),
+                            ),
+                          ),
+                        );
+                      }
+                      return;
+                    }
+                    //Check if username is unique
+                    bool uniqueusername = await NetworkAction()
+                        .isusernameunique(usernamecontroller.text);
+                    if (!uniqueusername) {
+                      if (context.mounted) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            backgroundColor: Colors.black,
+                            content: AutoSizeText(
+                              AppLocalizations.of(context)!.usernameunavailable,
+                              style: const TextStyle(
+                                  fontSize: 20, color: Colors.white),
+                            ),
+                          ),
+                        );
+                      }
 
-                return;
-              }
-              //If valid and unique, go to next step
-              if (uniqueusername && validusername) {
-                globalstatus.choosenusername = usernamecontroller.text;
-                String pubkeyactive =
-                    globalstatus.keypairActive.publicKey.toString();
-                String pubkeyowner =
-                    globalstatus.keypairOwner.publicKey.toString();
-                AccountRequest request = await NetworkAction().requestaccount(
-                    globalstatus.getCaptchaResponse!,
-                    usernamecontroller.text,
-                    pubkeyowner,
-                    pubkeyactive);
-                if (request.message == "success") {
-                  if (context.mounted) {
-                    Provider.of<GlobalStatus>(context, listen: false)
-                        .accountRequest = request;
-                    Provider.of<GlobalStatus>(context, listen: false)
-                        .setCurrentStep(3);
+                      return;
+                    }
+                    //If valid and unique, go to next step
+                    if (uniqueusername && validusername) {
+                      globalstatus.choosenusername = usernamecontroller.text;
+                      String pubkeyactive =
+                          globalstatus.keypairActive.publicKey.toString();
+                      String pubkeyowner =
+                          globalstatus.keypairOwner.publicKey.toString();
+                      setState(() {
+                        loading = true;
+                      });
+                      AccountRequest request = await NetworkAction()
+                          .requestaccount(
+                              globalstatus.getCaptchaResponse!,
+                              usernamecontroller.text,
+                              pubkeyowner,
+                              pubkeyactive);
+                      if (request.message == "success") {
+                        if (context.mounted) {
+                          Provider.of<GlobalStatus>(context, listen: false)
+                              .accountRequest = request;
+                          Provider.of<GlobalStatus>(context, listen: false)
+                              .setCurrentStep(3);
+                        }
+                      } else {
+                        if (context.mounted) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              backgroundColor: Colors.black,
+                              content: AutoSizeText(
+                                AppLocalizations.of(context)!.errorappeared,
+                                style: const TextStyle(
+                                    fontSize: 20, color: Colors.white),
+                              ),
+                            ),
+                          );
+                        }
+                      }
+                      setState(() {
+                        loading = false;
+                      });
+                    }
                   }
-                } else {
-                  if (context.mounted) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        backgroundColor: Colors.black,
-                        content: AutoSizeText(
-                          AppLocalizations.of(context)!.errorappeared,
-                          style: const TextStyle(
-                              fontSize: 20, color: Colors.white),
-                        ),
-                      ),
-                    );
-                  }
-                }
-              }
-            },
-            child: Text(AppLocalizations.of(context)!.next),
+                : null,
+            style: ButtonStyle(
+              backgroundColor: WidgetStateProperty.all<Color>(isusernamevalid
+                  ? Colors.green
+                  : Colors.grey.withOpacity(0.5)),
+            ),
+            child: loading
+                ? const CircularProgressIndicator(
+                    color: Colors.black,
+                  )
+                : Text(
+                    AppLocalizations.of(context)!.next,
+                    style: const TextStyle(color: Colors.black, fontSize: 20),
+                  ),
           ),
         ],
       );

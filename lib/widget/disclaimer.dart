@@ -23,6 +23,7 @@ class _DisclaimerState extends State<Disclaimer> {
                 ? Text(
                     AppLocalizations.of(context)!.noaccountsavailable,
                     style: TextStyle(fontSize: 16, color: Colors.white),
+                    textAlign: TextAlign.center,
                   )
                 : Column(
                     children: [
