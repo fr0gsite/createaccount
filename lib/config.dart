@@ -35,6 +35,7 @@ class AppConfig {
     AppLanguage("中文", "zh"),
     AppLanguage("日本語", "ja"),
     AppLanguage("اللغة العربية", "ar"),
+    AppLanguage("हिन्दी", "hi"),
     AppLanguage("Italiano", "it"),
     AppLanguage("Čeština", "cz"),
   ];
