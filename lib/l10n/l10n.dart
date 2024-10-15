@@ -14,6 +14,6 @@ class L10n {
     const Locale('uk', 'UA'),
     const Locale('hi', 'IN'),
     const Locale('it', 'IT'),
-    const Locale('cz', 'CZ'),
+    const Locale('cs', 'CZ'),
   ];
 }
