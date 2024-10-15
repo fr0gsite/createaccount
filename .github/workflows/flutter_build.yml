@@ -18,7 +18,6 @@ jobs:
         flutter-version: '3.24.3'
         channel: 'stable'
         
-    
     - name: enable web
       run: flutter config --enable-web
 
@@ -34,11 +33,21 @@ jobs:
     - name: Build Web App
       run: flutter build web
 
-    - name: Create Container for web
+    - name: Read version number from pubspec.yaml
+      id: read-version
+      run: echo "version=$(grep '^version: ' pubspec.yaml | cut -d ' ' -f 2)" >> $GITHUB_ENV
+
+    - name: Create Container for web (latest)
       run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/createaccount:latest .
+
+    - name: Create Container for web (version tag)
+      run: docker tag ${{ secrets.DOCKERHUB_USERNAME }}/createaccount:latest ${{ secrets.DOCKERHUB_USERNAME }}/createaccount:${{ env.version }}
 
     - name: Log in to Docker Hub
       run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
-    - name: Push Docker image to Docker Hub
+    - name: Push Docker image to Docker Hub (latest)
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/createaccount:latest
+
+    - name: Push Docker image to Docker Hub (version tag)
+      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/createaccount:${{ env.version }}
