@@ -35,7 +35,9 @@ jobs:
 
     - name: Read version number from pubspec.yaml
       id: read-version
-      run: echo "version=$(grep '^version: ' pubspec.yaml | cut -d ' ' -f 2)" >> $GITHUB_ENV
+      run: |
+        version=$(grep '^version: ' pubspec.yaml | cut -d ' ' -f 2)
+        echo "version=$version" >> $GITHUB_ENV
 
     - name: Create Container for web (latest)
       run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/createaccount:latest .
