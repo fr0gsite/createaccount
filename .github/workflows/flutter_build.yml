@@ -33,17 +33,16 @@ jobs:
     - name: Build Web App
       run: flutter build web
 
-    - name: Read version number from pubspec.yaml
-      id: read-version
-      run: |
-        version=$(grep '^version: ' pubspec.yaml | cut -d ' ' -f 2)
-        echo "version=$version" >> $GITHUB_ENV
+    - id: read-version
+      uses: NiklasLehnfeld/flutter-version-number-action@v1
+      with:
+        file-path: pubspec.yaml
 
     - name: Create Container for web (latest)
       run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/createaccount:latest .
 
     - name: Create Container for web (version tag)
-      run: docker tag ${{ secrets.DOCKERHUB_USERNAME }}/createaccount:latest ${{ secrets.DOCKERHUB_USERNAME }}/createaccount:${{ env.version }}
+      run: docker tag ${{ secrets.DOCKERHUB_USERNAME }}/createaccount:latest ${{ secrets.DOCKERHUB_USERNAME }}/createaccount:{{ steps.read-version.outputs.version-number }}
 
     - name: Log in to Docker Hub
       run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
@@ -52,4 +51,4 @@ jobs:
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/createaccount:latest
 
     - name: Push Docker image to Docker Hub (version tag)
-      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/createaccount:${{ env.version }}
+      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/createaccount:${{ steps.read-version.outputs.version-number }}
