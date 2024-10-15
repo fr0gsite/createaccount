@@ -1,7 +1,6 @@
 import 'package:createaccount/datatypes/accountrequest.dart';
 import 'package:createaccount/datatypes/captcharesponse.dart';
 import 'package:createaccount/datatypes/keypair.dart';
-import 'package:createaccount/l10n/l10n.dart';
 import 'package:createaccount/tools.dart';
 import 'package:flutter/material.dart';
 
