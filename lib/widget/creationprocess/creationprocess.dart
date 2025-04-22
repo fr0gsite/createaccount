@@ -31,8 +31,9 @@ class _CreationProcessState extends State<CreationProcess> {
 
     //Get the number of available accounts
     NetworkAction().getavailableaccounts().then((value) {
-      Provider.of<GlobalStatus>(context, listen: false)
-          .setAvailableAccounts(value);
+      if(mounted){
+        Provider.of<GlobalStatus>(context, listen: false).setAvailableAccounts(value);
+      }
     });
   }
 
@@ -53,6 +54,7 @@ class _CreationProcessState extends State<CreationProcess> {
                           "${globalstatus.availableaccounts} ${AppLocalizations.of(context)!.accountsthatcanbegeneratedtoday}",
                           style: TextStyle(
                             color: Colors.white,
+                            fontWeight: FontWeight.bold,
                             fontSize: 20,
                           ),
                           textAlign: TextAlign.center,
@@ -61,13 +63,13 @@ class _CreationProcessState extends State<CreationProcess> {
                 ),
                 Container(
                   decoration: BoxDecoration(
-                      color: AppConfig.colorPrimary.withOpacity(0.5),
+                      color: AppConfig.colorPrimary.withAlpha((0.5 * 255).toInt()),
                       borderRadius: const BorderRadius.all(
-                        Radius.circular(20),
+                        Radius.circular(8.0),
                       ),
                       border: Border.all(
-                        color: AppConfig.colorSecondary,
-                        width: 2,
+                        color: Colors.white,
+                        width: 1,
                       )),
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),

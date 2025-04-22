@@ -139,13 +139,13 @@ class NetworkAction {
         return remainingAccounts;
       } else {
         // Fehler: Server hat einen anderen Statuscode zurückgegeben
-        print(
+        debugPrint(
             'Failed to fetch remaining accounts. Status code: ${response.statusCode}');
         return -1;
       }
     } catch (error) {
       // Fehler bei der Netzwerk-Anfrage
-      print('Error fetching remaining accounts: $error');
+      debugPrint('Error fetching remaining accounts: $error');
       return -1;
     }
   }

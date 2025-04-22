@@ -36,7 +36,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "fr0gsite Account",
+      title: "Fr0gsite Account Creator",
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
             primary: AppConfig.colorPrimary,
@@ -127,7 +128,16 @@ class _MyHomePageState extends State<MyHomePage>
                 ],
               )),
           Container(
-            color: Colors.black.withOpacity(0.5),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Theme.of(context).colorScheme.primary.withAlpha(0),
+                  Theme.of(context).colorScheme.primary.withAlpha(255),
+                ],
+              ),
+            ),
           ),
           const CreationProcess(),
         ],

@@ -37,10 +37,16 @@ class _DisclaimerState extends State<Disclaimer> {
                         },
                         style: TextButton.styleFrom(
                           backgroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          padding: EdgeInsets.symmetric(
+                              vertical: 12.0, horizontal: 24.0),
                         ),
                         child: Text(AppLocalizations.of(context)!.createaccount,
                             style:
-                                TextStyle(color: Colors.black, fontSize: 20)),
+                                TextStyle(color: Colors.black, fontSize: 20, 
+                                    fontWeight: FontWeight.bold)),
                       ),
                     ],
                   ),

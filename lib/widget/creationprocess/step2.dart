@@ -40,30 +40,36 @@ class _Step2State extends State<Step2> {
       return Column(
         children: [
           const SizedBox(
-            height: 20,
+            height: 10,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "${AppLocalizations.of(context)!.usernamemustmatchformat}:",
-                style: const TextStyle(color: Colors.white, fontSize: 20),
-              ),
-              Text(
-                "- ${AppLocalizations.of(context)!.usernamerule1}",
-                style: const TextStyle(
-                    color: Colors.red,
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold),
-              ),
-              Text(
-                "- ${AppLocalizations.of(context)!.usernamerule2}",
-                style: const TextStyle(
-                    color: Colors.red,
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold),
-              ),
-            ],
+          ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 300),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "${AppLocalizations.of(context)!.usernamemustmatchformat}:",
+                  style: const TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  "- ${AppLocalizations.of(context)!.usernamerule1}",
+                  style: const TextStyle(
+                      color: Colors.red,
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  "- ${AppLocalizations.of(context)!.usernamerule2}",
+                  style: const TextStyle(
+                      color: Colors.red,
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
           ),
           const SizedBox(
             height: 20,
@@ -97,14 +103,16 @@ class _Step2State extends State<Step2> {
               Text(
                 AppLocalizations.of(context)!.usernamevalid,
                 style: TextStyle(
-                    color: isusernamevalid ? Colors.green : Colors.red),
+                    color: isusernamevalid ? Colors.green : Colors.red,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
               ),
             ],
           ),
           const SizedBox(
             height: 20,
           ),
-          ElevatedButton(
+          TextButton(
             onPressed: isusernamevalid && !loading
                 ? () async {
                     bool validusername =
@@ -185,11 +193,30 @@ class _Step2State extends State<Step2> {
                       });
                     }
                   }
-                : null,
-            style: ButtonStyle(
-              backgroundColor: WidgetStateProperty.all<Color>(isusernamevalid
-                  ? Colors.green
-                  : Colors.grey.withOpacity(0.5)),
+                 // Open Snackbar if username is not valid 
+                : () {
+                    if (mounted) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          backgroundColor: Colors.black,
+                          content: AutoSizeText(
+                            AppLocalizations.of(context)!.usernameinvalid,
+                            style:
+                                const TextStyle(fontSize: 20, color: Colors.white),
+                          ),
+                        ),
+                      );
+                    }
+                  },
+            style: TextButton.styleFrom(
+              backgroundColor: isusernamevalid && !loading
+                  ? Colors.white
+                  : Colors.white.withAlpha((0.5 * 255).toInt()),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+              padding: const EdgeInsets.symmetric(
+                  vertical: 12.0, horizontal: 24.0), 
             ),
             child: loading
                 ? const CircularProgressIndicator(
@@ -197,7 +224,8 @@ class _Step2State extends State<Step2> {
                   )
                 : Text(
                     AppLocalizations.of(context)!.next,
-                    style: const TextStyle(color: Colors.black, fontSize: 20),
+                    style: const TextStyle(color: Colors.black, fontSize: 20, 
+                        fontWeight: FontWeight.bold),
                   ),
           ),
         ],

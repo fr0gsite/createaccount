@@ -167,9 +167,11 @@ class _Step1State extends State<Step1> {
       });
       return false;
     }
-    Provider.of<GlobalStatus>(context, listen: false).setCaptchaVerified(false);
-    Provider.of<GlobalStatus>(context, listen: false)
-        .setRequestcaptchtimeout(true);
+    if(mounted){
+      Provider.of<GlobalStatus>(context, listen: false).setCaptchaVerified(false);
+      Provider.of<GlobalStatus>(context, listen: false)
+          .setRequestcaptchtimeout(true);
+    }
     return true;
   }
 }
