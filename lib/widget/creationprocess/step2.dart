@@ -4,6 +4,7 @@ import 'package:createaccount/datatypes/globalstatus.dart';
 import 'package:createaccount/networkaction.dart';
 import 'package:createaccount/tools.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -79,6 +80,7 @@ class _Step2State extends State<Step2> {
             child: TextField(
               controller: usernamecontroller,
               style: const TextStyle(color: Colors.white),
+              inputFormatters: [EosNameTextFormatter()],
               autofillHints: const [AutofillHints.password],
               decoration: InputDecoration(
                   labelText: AppLocalizations.of(context)!.username,
@@ -231,5 +233,32 @@ class _Step2State extends State<Step2> {
         ],
       );
     });
+  }
+}
+
+
+class EosNameTextFormatter extends TextInputFormatter {
+  // Regex für zulässige Zeichen
+  static final _allowed = RegExp(r'[a-z1-5]');
+
+  @override
+  TextEditingValue formatEditUpdate(
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
+    // 1. Kleinbuchstaben erzwingen
+    final lower = newValue.text.toLowerCase();
+
+    // 2. Nicht erlaubte Zeichen entfernen
+    final filtered = lower.split('').where(_allowed.hasMatch).join();
+
+    // 3. Auf 12 Zeichen begrenzen
+    final trimmed = filtered.length > 12 ? filtered.substring(0, 12) : filtered;
+
+    // Cursorposition anpassen
+    return TextEditingValue(
+      text: trimmed,
+      selection: TextSelection.collapsed(offset: trimmed.length),
+    );
   }
 }
