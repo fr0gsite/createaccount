@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/badge/License-Private-red.svg)](#)
 [![Version](https://img.shields.io/badge/Version-1.1.0-green.svg)](#)
 
+**Website**: [https://create.fr0g.site](https://fr0g.site)
+
 A secure, multilingual Flutter application for creating blockchain accounts on the Fr0g platform. The app supports 14 languages and provides a user-friendly 3-step process with captcha verification and certificate generation.
 
 ## 🎯 Features
@@ -161,38 +163,6 @@ class CaptchaResponse {
 - [x] Cross-platform support
 - [x] Animated user interface
 
-### 🚧 In Progress
-- [ ] Extended security features
-- [ ] Offline mode for credential generation
-- [ ] Backup/recovery options
-
-### 📋 Planned
-- [ ] Hardware wallet integration
-- [ ] Batch account creation
-- [ ] Admin dashboard
-- [ ] API rate limiting
-
-## 🤝 Contributing
-
-Currently this is a private project of the Fr0g community. If interested in contributing:
-
-1. Create issue for discussion
-2. Fork the repository
-3. Create feature branch (`git checkout -b feature/AmazingFeature`)
-4. Commit changes (`git commit -m 'Add some AmazingFeature'`)
-5. Push branch (`git push origin feature/AmazingFeature`)
-6. Create pull request
-
-## 📄 License
-
-This project is private and not intended for public use. All rights reserved.
-
-## 🆘 Support & Security
-
-### Support
-- **Website**: [https://fr0g.site](https://fr0g.site)
-- **Issues**: GitHub Issues for bug reports
-- **Community**: Fr0g community channels
 
 ### Security
 - **Private Keys**: Generated locally only, never transmitted
@@ -211,4 +181,4 @@ This project is private and not intended for public use. All rights reserved.
 
 ---
 
-**Fr0g Account Creator** - Secure blockchain account creation for the Fr0g community
+**Fr0g Account Creator** - Account creation for the Fr0g community
