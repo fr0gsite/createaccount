@@ -4,16 +4,16 @@ import 'dart:math';
 import 'package:country_flags/country_flags.dart';
 import 'package:createaccount/config.dart';
 import 'package:createaccount/datatypes/globalstatus.dart';
+import 'package:createaccount/l10n/app_localizations.dart';
 import 'package:createaccount/l10n/l10n.dart';
 import 'package:createaccount/widget/creationprocess/creationprocess.dart';
 import 'package:createaccount/widget/setlanguageview.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
-// DOTO: deactivate https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Me5WZLCzYlKw.ttf
+// TODO: deactivate https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Me5WZLCzYlKw.ttf
 // using local instead
 
 void main() {
@@ -111,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage>
         children: [
           Container(color: const Color.fromARGB(255, 59, 104, 8)),
 
-          //background with ic_launcher.png wipping around
+          //background with ic_launcher.png moving around
 
           RotationTransition(
               turns: Tween(begin: -0.05, end: 0.05).animate(
@@ -150,10 +150,12 @@ class _MyHomePageState extends State<MyHomePage>
         child: Wrap(
           children: [
             const Icon(Icons.translate, size: 25),
-            CountryFlag.fromCountryCode(
-              AppLocalizations.of(context)!.countrycode,
+            SizedBox(
               width: 25,
               height: 25,
+              child: CountryFlag.fromCountryCode(
+                AppLocalizations.of(context)!.countrycode,
+              ),
             ),
           ],
         ),

@@ -1,12 +1,12 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:createaccount/datatypes/accountrequest.dart';
 import 'package:createaccount/datatypes/globalstatus.dart';
+import 'package:createaccount/l10n/app_localizations.dart';
 import 'package:createaccount/networkaction.dart';
 import 'package:createaccount/tools.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Step2 extends StatefulWidget {
   const Step2({super.key});
@@ -238,7 +238,7 @@ class _Step2State extends State<Step2> {
 
 
 class EosNameTextFormatter extends TextInputFormatter {
-  // Regex für zulässige Zeichen
+  // Regex for allowed characters
   static final _allowed = RegExp(r'[a-z1-5]');
 
   @override
@@ -246,16 +246,16 @@ class EosNameTextFormatter extends TextInputFormatter {
     TextEditingValue oldValue,
     TextEditingValue newValue,
   ) {
-    // 1. Kleinbuchstaben erzwingen
+    // 1. Force lowercase
     final lower = newValue.text.toLowerCase();
 
-    // 2. Nicht erlaubte Zeichen entfernen
+    // 2. Remove disallowed characters
     final filtered = lower.split('').where(_allowed.hasMatch).join();
 
-    // 3. Auf 12 Zeichen begrenzen
+    // 3. Limit to 12 characters
     final trimmed = filtered.length > 12 ? filtered.substring(0, 12) : filtered;
 
-    // Cursorposition anpassen
+    // Adjust cursor position
     return TextEditingValue(
       text: trimmed,
       selection: TextSelection.collapsed(offset: trimmed.length),

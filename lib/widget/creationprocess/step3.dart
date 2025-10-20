@@ -2,12 +2,12 @@
 import 'package:archive/archive.dart';
 import 'package:createaccount/config.dart';
 import 'package:createaccount/datatypes/globalstatus.dart';
+import 'package:createaccount/l10n/app_localizations.dart';
 import 'package:createaccount/widget/printcert.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:html' as html;
 

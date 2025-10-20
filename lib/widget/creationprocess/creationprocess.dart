@@ -1,12 +1,12 @@
 import 'package:createaccount/config.dart';
 import 'package:createaccount/datatypes/globalstatus.dart';
+import 'package:createaccount/l10n/app_localizations.dart';
 import 'package:createaccount/networkaction.dart';
 import 'package:createaccount/widget/creationprocess/step1.dart';
 import 'package:createaccount/widget/creationprocess/step2.dart';
 import 'package:createaccount/widget/creationprocess/step3.dart';
 import 'package:createaccount/widget/disclaimer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
 class CreationProcess extends StatefulWidget {

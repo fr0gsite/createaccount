@@ -2,12 +2,12 @@ import 'dart:ui';
 
 import 'package:base_x/base_x.dart';
 import 'package:createaccount/config.dart';
+import 'package:createaccount/l10n/app_localizations.dart';
 import 'package:createaccount/tools.dart';
 import 'package:createaccount/wordlist/wordlist.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:qr_flutter/qr_flutter.dart';
@@ -88,7 +88,7 @@ import 'package:qr_flutter/qr_flutter.dart';
     //Multidimensional array. Max 4 words per line.
     List<List<String>> multidimensionalArray = [];
 
-    int chunkSize = 4; // Sie können die Chunk-Größe nach Bedarf anpassen
+    int chunkSize = 4; // You can adjust the chunk size as needed
 
     for (int i = 0; i < mnemonic.length; i += chunkSize) {
       if (mnemonic.length - i < chunkSize) {
@@ -131,7 +131,7 @@ import 'package:qr_flutter/qr_flutter.dart';
                 child: pw.Container(
                   margin: const pw.EdgeInsets.only(bottom: 500),
                   child: pw.Divider(
-                      thickness: 1.0, // Dicke der Linie
+                      thickness: 1.0, // Line thickness
                       color: PdfColors.black,
                       indent: 100,
                       endIndent: 100),

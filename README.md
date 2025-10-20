@@ -1,16 +1,214 @@
-# createaccount
+# Fr0g Account Creator
 
-A new Flutter project.
+[![Flutter](https://img.shields.io/badge/Flutter-3.24.1-blue.svg)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-3.6.1-blue.svg)](https://dart.dev)
+[![License](https://img.shields.io/badge/License-Private-red.svg)](#)
+[![Version](https://img.shields.io/badge/Version-1.1.0-green.svg)](#)
 
-## Getting Started
+A secure, multilingual Flutter application for creating blockchain accounts on the Fr0g platform. The app supports 14 languages and provides a user-friendly 3-step process with captcha verification and certificate generation.
 
-This project is a starting point for a Flutter application.
+## 🎯 Features
 
-A few resources to get you started if this is your first Flutter project:
+- **Multilingual**: Support for 14 languages (DE, EN, FR, ES, PT, RU, UK, ZH, JA, AR, HI, IT, CS)
+- **Secure Account Creation**: 3-step process with validation
+- **Captcha Verification**: Sliding puzzle captcha for security
+- **Certificate Generation**: PDF export of account credentials
+- **Cross-Platform**: Available for iOS, Android, Web, Windows, macOS and Linux
+- **Animated UI**: Lottie animations for better user experience
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🚀 Quick Start
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Prerequisites
+
+- Flutter SDK 3.24.1+
+- Dart SDK 3.6.1+
+- Android Studio / VS Code with Flutter plugin
+
+### Installation
+
+1. **Clone repository**
+   ```bash
+   git clone https://github.com/fr0gsite/createaccount.git
+   cd createaccount
+   ```
+
+2. **Install dependencies**
+   ```bash
+   flutter pub get
+   ```
+
+3. **Start application**
+   ```bash
+   flutter run
+   ```
+
+### Docker Setup (Optional)
+
+```bash
+docker build -t fr0g-account-creator .
+docker run -p 80:80 fr0g-account-creator
+```
+
+## 📱 Usage
+
+### Account Creation in 3 Steps:
+
+1. **Enter Username**
+   - Format: a-z (lowercase) and numbers 1-5
+   - Maximum 12 characters
+   - Availability is automatically checked
+
+2. **Solve Captcha**
+   - Sliding puzzle for security verification
+   - Drag puzzle piece to correct position
+
+3. **Receive Credentials**
+   - Private/Public key pair generated
+   - PDF certificate for download
+   - QR codes for easy transfer
+
+### Important Commands
+
+```bash
+# Generate icons
+flutter pub run flutter_launcher_icons
+
+# Generate localizations
+flutter gen-l10n
+
+# Run tests
+flutter test
+
+# Release build
+flutter build apk --release
+flutter build web --release
+```
+
+## ⚙️ Configuration
+
+### Environment Variables
+
+The app uses the following server endpoints (configured in `lib/config.dart`):
+
+```dart
+static const websiteurl = "https://fr0g.site";
+static const chainserverurl = "https://testnet.fr0g.site:8443";
+static const captchaserverurl = "https://captcha.fr0g.site:2096";
+static const createaccountserverurl = "https://accountserver.fr0g.site:8443";
+```
+
+### Customizable Settings
+
+- **Language**: Via language icon in the app
+- **Colors**: `AppConfig.colorPrimary` and `AppConfig.colorSecondary`
+- **Animation Timer**: 5 second interval for background changes
+
+## 🏗️ Project Structure
+
+```
+lib/
+├── config.dart                 # App configuration and constants
+├── main.dart                   # App entry point
+├── networkaction.dart          # Network API calls
+├── tools.dart                  # Utility functions
+├── datatypes/                  # Data models
+│   ├── accountrequest.dart
+│   ├── captcharesponse.dart
+│   ├── globalstatus.dart
+│   ├── keypair.dart
+│   └── puzzle.dart
+├── l10n/                       # Internationalization
+│   └── app_*.arb              # Translation files
+├── widget/                     # UI components
+│   ├── creationprocess/       # Account creation flow
+│   ├── disclaimer.dart
+│   ├── printcert.dart
+│   └── setlanguageview.dart
+└── wordlist/                   # BIP39 word lists
+    └── *.dart                 # Various languages
+```
+
+## 🌐 API Reference
+
+### Endpoints
+
+- **GET** `/available` - Get available account slots
+- **POST** `/puzzle` - Request captcha puzzle
+- **POST** `/puzzle/solution` - Verify captcha solution
+- **POST** `/create` - Create account
+
+### Data Models
+
+```dart
+class AccountRequest {
+  final String message;
+  final String transactionid;
+}
+
+class CaptchaResponse {
+  final String puzzleImage;
+  final String targetPosition;
+}
+```
+
+## 🗺️ Roadmap & Status
+
+### ✅ Completed
+- [x] Multi-language support (14 languages)
+- [x] 3-step account creation
+- [x] Captcha integration
+- [x] PDF certificate generation
+- [x] Cross-platform support
+- [x] Animated user interface
+
+### 🚧 In Progress
+- [ ] Extended security features
+- [ ] Offline mode for credential generation
+- [ ] Backup/recovery options
+
+### 📋 Planned
+- [ ] Hardware wallet integration
+- [ ] Batch account creation
+- [ ] Admin dashboard
+- [ ] API rate limiting
+
+## 🤝 Contributing
+
+Currently this is a private project of the Fr0g community. If interested in contributing:
+
+1. Create issue for discussion
+2. Fork the repository
+3. Create feature branch (`git checkout -b feature/AmazingFeature`)
+4. Commit changes (`git commit -m 'Add some AmazingFeature'`)
+5. Push branch (`git push origin feature/AmazingFeature`)
+6. Create pull request
+
+## 📄 License
+
+This project is private and not intended for public use. All rights reserved.
+
+## 🆘 Support & Security
+
+### Support
+- **Website**: [https://fr0g.site](https://fr0g.site)
+- **Issues**: GitHub Issues for bug reports
+- **Community**: Fr0g community channels
+
+### Security
+- **Private Keys**: Generated locally only, never transmitted
+- **Certificates**: Store securely, do not share
+- **Updates**: Regular security updates available
+
+⚠️ **Important Notice**: This platform is currently in beta phase. Accounts may be changed or deleted without notice.
+
+## 🙏 Acknowledgments
+
+- **Flutter Team** - For the excellent framework
+- **Lottie** - For the animation library
+- **EOS Community** - For blockchain integration
+- **Fr0g Community** - For support and feedback
+- **Translators** - For multilingual support
+
+---
+
+**Fr0g Account Creator** - Secure blockchain account creation for the Fr0g community

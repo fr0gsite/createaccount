@@ -131,20 +131,20 @@ class NetworkAction {
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
-        // Erfolg: Die Antwort wird verarbeitet
+        // Success: The response is being processed
         final data = json.decode(response.body);
 
         int remainingAccounts = data['remainingAccounts'];
         //return 0;
         return remainingAccounts;
       } else {
-        // Fehler: Server hat einen anderen Statuscode zurückgegeben
+        // Error: Server returned a different status code
         debugPrint(
             'Failed to fetch remaining accounts. Status code: ${response.statusCode}');
         return -1;
       }
     } catch (error) {
-      // Fehler bei der Netzwerk-Anfrage
+      // Error with the network request
       debugPrint('Error fetching remaining accounts: $error');
       return -1;
     }
