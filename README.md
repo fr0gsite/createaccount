@@ -1,7 +1,7 @@
 # Fr0g Account Creator
 
-[![Flutter](https://img.shields.io/badge/Flutter-3.24.1-blue.svg)](https://flutter.dev)
-[![Dart](https://img.shields.io/badge/Dart-3.6.1-blue.svg)](https://dart.dev)
+[![Flutter](https://img.shields.io/badge/Flutter-3.35.5-blue.svg)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-3.9.2-blue.svg)](https://dart.dev)
 [![License](https://img.shields.io/badge/License-Private-red.svg)](#)
 [![Version](https://img.shields.io/badge/Version-1.1.0-green.svg)](#)
 
@@ -20,8 +20,8 @@ A secure, multilingual Flutter application for creating blockchain accounts on t
 
 ### Prerequisites
 
-- Flutter SDK 3.24.1+
-- Dart SDK 3.6.1+
+- Flutter SDK 3.35.5+
+- Dart SDK 3.9.2+
 - Android Studio / VS Code with Flutter plugin
 
 ### Installation
