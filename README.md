@@ -16,7 +16,10 @@ A secure, multilingual Flutter application for creating blockchain accounts on t
 - **Captcha Verification**: Sliding puzzle captcha for security
 - **Certificate Generation**: PDF export of account credentials
 - **Cross-Platform**: Available for iOS, Android, Web, Windows, macOS and Linux
-- **Animated UI**: Lottie animations for better user experience
+- **Private Keys**: Generated locally only, never transmitted
+
+⚠️ **Important Notice**: This platform is currently in beta phase. Accounts may be changed or deleted without notice.
+
 
 ## 🚀 Quick Start
 
@@ -164,21 +167,5 @@ class CaptchaResponse {
 - [x] Animated user interface
 
 
-### Security
-- **Private Keys**: Generated locally only, never transmitted
-- **Certificates**: Store securely, do not share
-- **Updates**: Regular security updates available
-
-⚠️ **Important Notice**: This platform is currently in beta phase. Accounts may be changed or deleted without notice.
-
-## 🙏 Acknowledgments
-
-- **Flutter Team** - For the excellent framework
-- **Lottie** - For the animation library
-- **EOS Community** - For blockchain integration
-- **Fr0g Community** - For support and feedback
-- **Translators** - For multilingual support
-
----
 
 **Fr0g Account Creator** - Account creation for the Fr0g community
