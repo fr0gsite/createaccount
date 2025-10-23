@@ -1,5 +1,7 @@
 # Fr0g Account Creator
 
+⚠️ **Important Notice**: This platform is currently in beta phase. Accounts may be changed or deleted without notice.
+
 [![Flutter](https://img.shields.io/badge/Flutter-3.35.5-blue.svg)](https://flutter.dev)
 [![Dart](https://img.shields.io/badge/Dart-3.9.2-blue.svg)](https://dart.dev)
 [![License](https://img.shields.io/badge/License-Private-red.svg)](#)
@@ -18,7 +20,6 @@ A secure, multilingual Flutter application for creating blockchain accounts on t
 - **Cross-Platform**: Available for iOS, Android, Web, Windows, macOS and Linux
 - **Private Keys**: Generated locally only, never transmitted
 
-⚠️ **Important Notice**: This platform is currently in beta phase. Accounts may be changed or deleted without notice.
 
 
 ## 🚀 Quick Start
