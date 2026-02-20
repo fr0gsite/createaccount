@@ -34,6 +34,7 @@
 "network": "Síť",
 "certificate": "OSVĚDČENÍ",
 "clicktocopy": "Kliknutím zkopírovat",
+"clicktocopyfullykey": "Kliknutím zkopírujete celý klíč",
 "activepermissionexplain": "Pro každodenní používání",
 "tologin": "Pro přihlášení",
 "ownerpermissionexplain": "Může přepsat ACTIVE. V případě hacknutí nebo ztráty ACTIVE",

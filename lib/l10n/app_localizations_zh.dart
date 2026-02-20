@@ -111,6 +111,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get clicktocopy => '点击复制';
 
   @override
+  String get clicktocopyfullykey => '点击复制完整密钥';
+
+  @override
   String get activepermissionexplain => '用于日常使用';
 
   @override

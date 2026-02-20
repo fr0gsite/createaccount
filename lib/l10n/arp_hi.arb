@@ -33,6 +33,7 @@
     "network": "नेटवर्क",
     "certificate": "प्रमाणपत्र",
     "clicktocopy":"कॉपी करने के लिए क्लिक करें",
+    "clicktocopyfullykey":"पूर्ण कुंजी कॉपी करने के लिए क्लिक करें",
     "activepermissionexplain":"दैनिक उपयोग के लिए",
     "tologin":"लॉगिन के लिए",
     "ownerpermissionexplain":"ACTIVE को अधिलेखित कर सकता है। ACTIVE के हैक होने या खोने की स्थिति में",

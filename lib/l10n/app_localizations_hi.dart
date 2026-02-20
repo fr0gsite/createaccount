@@ -115,6 +115,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get clicktocopy => 'कॉपी करने के लिए क्लिक करें';
 
   @override
+  String get clicktocopyfullykey => 'पूर्ण कुंजी कॉपी करने के लिए क्लिक करें';
+
+  @override
   String get activepermissionexplain => 'दैनिक उपयोग के लिए';
 
   @override

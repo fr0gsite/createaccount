@@ -115,6 +115,9 @@ class AppLocalizationsUk extends AppLocalizations {
   String get clicktocopy => 'Натисніть, щоб скопіювати';
 
   @override
+  String get clicktocopyfullykey => 'Натисніть, щоб скопіювати повний ключ';
+
+  @override
   String get activepermissionexplain => 'Для щоденного використання';
 
   @override

@@ -113,6 +113,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get clicktocopy => 'انقر للنسخ';
 
   @override
+  String get clicktocopyfullykey => 'انقر لنسخ المفتاح الكامل';
+
+  @override
   String get activepermissionexplain => 'للاستخدام اليومي';
 
   @override

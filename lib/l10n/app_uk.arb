@@ -33,6 +33,7 @@
 "network": "Мережа",
 "certificate": "СЕРТИФІКАТ",
 "clicktocopy": "Натисніть, щоб скопіювати",
+"clicktocopyfullykey": "Натисніть, щоб скопіювати повний ключ",
 "activepermissionexplain": "Для щоденного використання",
 "tologin": "Щоб увійти",
 "ownerpermissionexplain": "Може перезаписати ACTIVE. У випадку взлому або втрати ACTIVE",

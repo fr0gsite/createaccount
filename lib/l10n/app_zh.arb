@@ -34,6 +34,7 @@
 "network": "网络",
 "certificate": "证书",
 "clicktocopy": "点击复制",
+"clicktocopyfullykey": "点击复制完整密钥",
 "activepermissionexplain": "用于日常使用",
 "tologin": "要登录",
 "ownerpermissionexplain": "可以覆盖 ACTIVE。在被黑客攻击或 ACTIVE 丢失的情况下",

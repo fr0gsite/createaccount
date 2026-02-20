@@ -324,6 +324,12 @@ abstract class AppLocalizations {
   /// **'Click to copy'**
   String get clicktocopy;
 
+  /// No description provided for @clicktocopyfullykey.
+  ///
+  /// In en, this message translates to:
+  /// **'Click to copy full key to clipboard'**
+  String get clicktocopyfullykey;
+
   /// No description provided for @activepermissionexplain.
   ///
   /// In en, this message translates to:

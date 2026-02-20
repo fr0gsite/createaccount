@@ -114,6 +114,9 @@ class AppLocalizationsCs extends AppLocalizations {
   String get clicktocopy => 'Kliknutím zkopírovat';
 
   @override
+  String get clicktocopyfullykey => 'Kliknutím zkopírujete celý klíč';
+
+  @override
   String get activepermissionexplain => 'Pro každodenní používání';
 
   @override

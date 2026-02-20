@@ -33,6 +33,7 @@
 "network": "Rete",
 "certificate": "CERTIFICATO",
 "clicktocopy": "Clicca per copiare",
+"clicktocopyfullykey": "Clicca per copiare la chiave completa",
 "activepermissionexplain": "Per uso quotidiano",
 "tologin": "Per accedere",
 "ownerpermissionexplain": "Può sovrascrivere ACTIVE. In caso di hack o perdita di ACTIVE",

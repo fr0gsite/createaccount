@@ -34,6 +34,7 @@
 "network": "Red",
 "certificate": "CERTIFICADO",
 "clicktocopy": "Haz clic para copiar",
+"clicktocopyfullykey": "Haz clic para copiar la clave completa",
 "activepermissionexplain": "Para uso diario",
 "tologin": "Para iniciar sesión",
 "ownerpermissionexplain": "Puede sobrescribir ACTIVE. En caso de hackeo o pérdida de ACTIVE",

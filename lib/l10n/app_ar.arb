@@ -34,6 +34,7 @@
 "network": "الشبكة",
 "certificate": "شهادة",
 "clicktocopy": "انقر للنسخ",
+"clicktocopyfullykey": "انقر لنسخ المفتاح الكامل",
 "activepermissionexplain": "للاستخدام اليومي",
 "tologin": "لتسجيل الدخول",
 "ownerpermissionexplain": "قد يتجاوز ACTIVE. في حالة الاختراق أو فقدان ACTIVE",

@@ -112,6 +112,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get clicktocopy => 'コピーするにはクリック';
 
   @override
+  String get clicktocopyfullykey => 'クリックして完全なキーをコピー';
+
+  @override
   String get activepermissionexplain => '日常使用のため';
 
   @override

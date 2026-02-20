@@ -36,6 +36,7 @@
     "network":"Network",
     "certificate":"CERTIFICATE",
     "clicktocopy":"Click to copy",
+    "clicktocopyfullykey":"Click to copy full key to clipboard",
     "activepermissionexplain":"For daily use",
     "tologin":"To login",
     "ownerpermissionexplain":"Can overwrite ACTIVE. In case of hack or lost of ACTIVE permission",

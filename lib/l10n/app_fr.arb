@@ -34,6 +34,7 @@
 "network": "Réseau",
 "certificate": "CERTIFICAT",
 "clicktocopy": "Cliquez pour copier",
+"clicktocopyfullykey": "Cliquez pour copier la clé complète",
 "activepermissionexplain": "Pour un usage quotidien",
 "tologin": "Pour se connecter",
 "ownerpermissionexplain": "Peut remplacer ACTIVE. En cas de piratage ou de perte d'ACTIVE",

@@ -34,6 +34,7 @@
 "network": "Rede",
 "certificate": "CERTIFICADO",
 "clicktocopy": "Kliknij, aby skopiować",
+"clicktocopyfullykey": "Clique para copiar a chave completa",
 "activepermissionexplain": "Do codziennego użytku",
 "tologin": "Para fazer login",
 "ownerpermissionexplain": "Może nadpisać ACTIVE. W przypadku hakowania lub utraty ACTIVE",

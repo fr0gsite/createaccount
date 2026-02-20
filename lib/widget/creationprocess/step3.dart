@@ -269,11 +269,23 @@ class _Step3State extends State<Step3> {
                             child: Tooltip(
                               message:
                                   AppLocalizations.of(context)!.clicktocopy,
-                              child: Text(
-                                "${value.keypairActive.privateKey.toString().substring(0, 10)} . . . ${value.keypairActive.privateKey.toString().substring(value.keypairActive.privateKey.toString().length - 10)}",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: usernameandkeysize),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "${value.keypairActive.privateKey.toString().substring(0, 10)} . . . ${value.keypairActive.privateKey.toString().substring(value.keypairActive.privateKey.toString().length - 10)}",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: usernameandkeysize),
+                                  ),
+                                  Text(
+                                    AppLocalizations.of(context)!.clicktocopyfullykey,
+                                    style: const TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                        fontStyle: FontStyle.italic),
+                                  ),
+                                ],
                               ),
                             ),
                           )
@@ -354,11 +366,23 @@ class _Step3State extends State<Step3> {
                             child: Tooltip(
                               message:
                                   AppLocalizations.of(context)!.clicktocopy,
-                              child: Text(
-                                "${value.keypairOwner.privateKey.toString().substring(0, 10)} . . . ${value.keypairOwner.privateKey.toString().substring(value.keypairOwner.privateKey.toString().length - 10)}",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: usernameandkeysize),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "${value.keypairOwner.privateKey.toString().substring(0, 10)} . . . ${value.keypairOwner.privateKey.toString().substring(value.keypairOwner.privateKey.toString().length - 10)}",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: usernameandkeysize),
+                                  ),
+                                  Text(
+                                    AppLocalizations.of(context)!.clicktocopyfullykey,
+                                    style: const TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 12,
+                                        fontStyle: FontStyle.italic),
+                                  ),
+                                ],
                               ),
                             ),
                           )

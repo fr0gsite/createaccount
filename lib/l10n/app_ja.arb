@@ -33,6 +33,7 @@
 "network": "ネットワーク",
 "certificate": "証明書",
 "clicktocopy": "コピーするにはクリック",
+"clicktocopyfullykey": "クリックして完全なキーをコピー",
 "activepermissionexplain": "日常使用のため",
 "tologin": "ログインするために",
 "ownerpermissionexplain": "ACTIVEの上書きが可能。ハッキングやACTIVEの紛失の場合",

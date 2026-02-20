@@ -117,6 +117,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get clicktocopy => 'Haz clic para copiar';
 
   @override
+  String get clicktocopyfullykey => 'Haz clic para copiar la clave completa';
+
+  @override
   String get activepermissionexplain => 'Para uso diario';
 
   @override

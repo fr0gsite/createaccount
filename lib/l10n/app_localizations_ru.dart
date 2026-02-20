@@ -116,6 +116,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get clicktocopy => 'Нажмите, чтобы скопировать';
 
   @override
+  String get clicktocopyfullykey => 'Нажмите, чтобы скопировать полный ключ';
+
+  @override
   String get activepermissionexplain => 'Для ежедневного использования';
 
   @override

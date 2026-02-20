@@ -34,6 +34,7 @@
 "network": "Сеть",
 "certificate": "СЕРТИФИКАТ",
 "clicktocopy": "Нажмите, чтобы скопировать",
+"clicktocopyfullykey": "Нажмите, чтобы скопировать полный ключ",
 "activepermissionexplain": "Для ежедневного использования",
 "tologin": "Войти в систему",
 "ownerpermissionexplain": "Может перезаписать ACTIVE. В случае взлома или утери ACTIVE",
