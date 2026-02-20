@@ -201,10 +201,24 @@ import 'package:qr_flutter/qr_flutter.dart';
                   style: pw.TextStyle(fontSize: 9, font: ttfregular),
                 ),
               ),
+              pw.Positioned(
+                top: 375,
+                left: 100,
+                child: pw.Text(AppLocalizations.of(context)!.privatekey,
+                    style: pw.TextStyle(fontSize: 09, font: ttfbold)),
+              ),
+              pw.Positioned(
+                top: 390,
+                left: 100,
+                child: pw.Text(
+                  prikey,
+                  style: pw.TextStyle(fontSize: 9, font: ttfregular),
+                ),
+              ),
 
               pw.Center(
                 child: pw.Container(
-                  margin: const pw.EdgeInsets.only(bottom: 90),
+                  margin: const pw.EdgeInsets.only(bottom: 20),
                   child: pw.Divider(
                       thickness: 1.0,
                       color: PdfColors.black,
@@ -214,7 +228,7 @@ import 'package:qr_flutter/qr_flutter.dart';
               ),
               pw.Center(
                 child: pw.Container(
-                  margin: const pw.EdgeInsets.only(bottom: 70),
+                  margin: const pw.EdgeInsets.only(bottom: 0),
                   child: pw.Text("MNEMONIC KEY",
                       style: pw.TextStyle(fontSize: 12, font: ttfbold)),
                 ),
@@ -223,7 +237,7 @@ import 'package:qr_flutter/qr_flutter.dart';
               //Mnemonic Key 28 words. 7 lines, 4 words each.
               pw.Center(
                 child: pw.Container(
-                  margin: const pw.EdgeInsets.only(top: 130, left: 80),
+                  margin: const pw.EdgeInsets.only(top: 170, left: 80),
                   child: pw.TableHelper.fromTextArray(
                       context: bcontext,
                       cellAlignment: pw.Alignment.centerLeft,
