@@ -37,7 +37,6 @@ import 'package:qr_flutter/qr_flutter.dart';
         await qrimagewebsitetoImage.toByteData(format: ImageByteFormat.png);
     final qrimagewebsiteUint8List =
         qrimagewebsiteByteData!.buffer.asUint8List();
-    // ignore: unused_local_variable
     final qrimagewebsite = pw.MemoryImage(qrimagewebsiteUint8List);
 
     final qrimagepaintercert = QrPainter(
@@ -226,9 +225,11 @@ import 'package:qr_flutter/qr_flutter.dart';
                       endIndent: 100),
                 ),
               ),
+
+              //Mnemonic Key title
               pw.Center(
                 child: pw.Container(
-                  margin: const pw.EdgeInsets.only(bottom: 0),
+                  margin: const pw.EdgeInsets.only(bottom: -10),
                   child: pw.Text("MNEMONIC KEY",
                       style: pw.TextStyle(fontSize: 12, font: ttfbold)),
                 ),
@@ -255,6 +256,7 @@ import 'package:qr_flutter/qr_flutter.dart';
                 ),
               ),
 
+              // Issue date and transaction ID
               pw.Center(
                 child: pw.Container(
                   margin: const pw.EdgeInsets.only(top: 700),
@@ -262,6 +264,30 @@ import 'package:qr_flutter/qr_flutter.dart';
                     "${AppLocalizations.of(context)!.issued}: ${DateFormat('yyyy-MM-dd kk:mm').format(DateTime.now())} ${AppLocalizations.of(context)!.withtransactionid}: $transactionid",
                     style: pw.TextStyle(fontSize: 7, font: ttfregular),
                   ),
+                ),
+              ),
+
+              //Website QR code and URL
+              pw.Positioned(
+                bottom: 130,
+                left: 250,
+                child: pw.Row(
+                  children: [
+                    pw.Image(qrimagewebsite, width: 50, height: 50),
+                    pw.SizedBox(width: 10),
+                    pw.UrlLink(
+                      destination: AppConfig.websiteurl,
+                      child: pw.Text(
+                        AppConfig.websiteurl,
+                        style: pw.TextStyle(
+                          fontSize: 10,
+                          font: ttfregular,
+                          color: PdfColors.blue,
+                          decoration: pw.TextDecoration.underline,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ]),
