@@ -238,7 +238,7 @@ import 'package:qr_flutter/qr_flutter.dart';
               //Mnemonic Key 28 words. 7 lines, 4 words each.
               pw.Center(
                 child: pw.Container(
-                  margin: const pw.EdgeInsets.only(top: 170, left: 80),
+                  margin: const pw.EdgeInsets.only(top: 200, left: 80),
                   child: pw.TableHelper.fromTextArray(
                       context: bcontext,
                       cellAlignment: pw.Alignment.centerLeft,
