@@ -9,7 +9,8 @@ import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'dart:html' as html;
+import 'package:web/web.dart' show Blob, URL, HTMLAnchorElement;
+import 'dart:js_interop';
 
 class Step3 extends StatefulWidget {
   const Step3({super.key});
@@ -454,11 +455,12 @@ class _Step3State extends State<Step3> {
   }
 
   void downloadZip(Uint8List zipBytes, String filename) {
-    final blob = html.Blob([zipBytes]);
-    final url = html.Url.createObjectUrlFromBlob(blob);
-    final anchor = html.AnchorElement(href: url)
-      ..setAttribute("download", filename)
-      ..click();
-    html.Url.revokeObjectUrl(url);
+    final blob = Blob([zipBytes.toJS].toJS);
+    final url = URL.createObjectURL(blob);
+    final anchor = HTMLAnchorElement()
+      ..href = url
+      ..download = filename;
+    anchor.click();
+    URL.revokeObjectURL(url);
   }
 }
