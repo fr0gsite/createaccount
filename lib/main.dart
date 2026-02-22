@@ -13,9 +13,6 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
-// TODO: deactivate https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Me5WZLCzYlKw.ttf
-// using local instead
-
 void main() {
   runApp(
     MultiProvider(
@@ -43,6 +40,7 @@ class MyApp extends StatelessWidget {
             primary: AppConfig.colorPrimary,
             secondary: AppConfig.colorSecondary),
         useMaterial3: true,
+        fontFamily: 'Roboto', // Use local Roboto fonts instead of Google Fonts
       ),
       supportedLocales: L10n.all,
       locale: Provider.of<GlobalStatus>(context).currentlanguage,
